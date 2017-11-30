@@ -1,0 +1,13 @@
+/**
+@param $r-outline:
+	*false: outline не сброшено
+	true: outline сброшено
+*/
+r-button($r-outline = false)
+	if $r-outline
+		r-outline(r-outline)
+	font-size inherit
+	background-color inherit
+	user-select none
+	border 0
+	cursor pointer

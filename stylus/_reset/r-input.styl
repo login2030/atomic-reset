@@ -1,0 +1,23 @@
+/**
+@param $r-outline:
+	*false: outline не сброшено
+	true: outline сброшено
+@param $r-offset:
+	*true: Применен сброс отступов
+	false: Не применяем сброс отступов
+@param $background-color:
+	*#FFF: цвет фона селекта
+*/
+r-input($r-outline = false, $r-offset = true, $background-color = #FFF)
+	if $r-outline
+		r-outline()
+	if $r-offset
+		r-offset()
+	background-color $background-color
+	border none
+	border-style none
+	-webkit-appearance none
+	-moz-appearance none
+	-ms-appearance none
+	font-size inherit
+	font-family inherit

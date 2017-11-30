@@ -1,0 +1,10 @@
+/**
+@param full-width: 
+	*true: Таблица растягивается на всю ширину родителя
+	false: Таблица имеет ширину по умолчанию
+*/
+r-table($full-width = true)
+	if $full-width
+		width 100%
+	border-collapse collapse
+	border-spacing 0

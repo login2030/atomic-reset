@@ -1,0 +1,21 @@
+/**
+@param $background-color:
+	*#FFF: цвет фона селекта
+@param $r-outline:
+	*false: outline не сброшено
+	true: outline сброшено
+*/
+r-select($r-outline = false, $background-color = #FFF)
+	if $r-outline
+		r-outline()
+	background-color $background-color
+	border none
+	-webkit-appearance none
+	background-repeat no-repeat
+	-moz-appearance: none
+	text-indent 0.01px
+	text-overflow ''
+	-ms-appearance: none
+	appearance none !important
+	&::-ms-expand
+		display none

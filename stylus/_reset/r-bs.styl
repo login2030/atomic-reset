@@ -1,0 +1,9 @@
+/**
+@param $r-bs:
+	*border-box: В размеры блока входят padding и border
+	content-box: В размеры блока не входят margin, padding и border
+	padding-box: В размеры блока входит только padding
+	inherit: Наследует значение родителя
+*/
+r-bs($r-bs = border-box)
+	box-sizing $r-bs

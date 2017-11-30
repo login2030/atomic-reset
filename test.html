@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="./test-src/stylus.js"></script>
+    <script type="text/javascript" src="http://stylus-lang.com/try/jquery.js"></script>
+    <title>TEst</title>
+    <style>
+      pre span {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+
+<pre class="stylus">
+<span>
+r-offset()
+  margin 0
+  padding 0
+
+r-clearfix()
+  &:before
+  &:after
+    content ''
+    content none
+    display none
+
+r-bs($r-bs = border-box)
+  box-sizing $r-bs
+
+r-outline()
+  outline none
+
+r-b($r-bs = border-box)
+  r-offset()
+  r-bs($r-bs)
+  display block
+
+r-i($r-bs = border-box)
+  r-offset()
+  r-bs($r-bs)
+  display inline
+
+r-ib($r-bs = border-box)
+  r-offset()
+  r-bs($r-bs)
+  display inline-block
+
+r-f($r-bs = border-box, $r-clearfix = false)
+  r-bs($r-bs)
+  r-offset()
+  if $r-clearfix
+    r-clearfix()
+  display flex
+
+r-button($r-outline = false)
+  if $r-outline
+    r-outline(r-outline)
+  font-size inherit
+  background-color inherit
+  user-select none
+  border 0
+  cursor pointer
+
+r-input($r-outline = false, $r-offset = true, $background-color = #FFF)
+  if $r-outline
+    r-outline()
+  if $r-offset
+    r-offset()
+  background-color $background-color
+  border none
+  border-style none
+  -webkit-appearance none
+  -moz-appearance none
+  -ms-appearance none
+  font-size inherit
+  font-family inherit
+
+r-list()
+  r-offset()
+  list-style none
+  padding-left 0
+
+r-link($text-decoration = none, $r-outline = false, $color = inherit)
+  if ($text-decoration == always)
+    text-decoration underline
+    &:hover
+      text-decoration underline
+  if ($text-decoration == none)
+    text-decoration none
+    &:hover
+      text-decoration none
+  if ($text-decoration == underline)
+    text-decoration underline
+    &:hover
+      text-decoration none
+  if ($text-decoration == hover)
+    text-decoration none
+    &:hover
+      text-decoration underline
+  if $r-outline
+    r-outline()
+  color $color
+
+r-select($r-outline = false, $background-color = #FFF)
+  if $r-outline
+    r-outline()
+  background-color $background-color
+  border none
+  -webkit-appearance none
+  background-repeat no-repeat
+  -moz-appearance: none
+  text-indent 0.01px
+  text-overflow ''
+  -ms-appearance: none
+  appearance none !important
+  &::-ms-expand
+    display none
+
+r-table($full-width = true)
+  if $full-width
+    width 100%
+  border-collapse collapse
+  border-spacing 0
+</span>
+.p
+  r-table(false)
+</pre>
+<pre class="css"></pre>
+
+<script>
+    $('.stylus').each(function() {
+        var $this = $(this);
+        stylus($this.text()).render(function(err, str) {
+            console.log(str);
+            $('.css').html(str);
+        });
+    });
+</script>
+</body>
+</html>

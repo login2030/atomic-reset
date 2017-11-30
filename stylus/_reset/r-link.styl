@@ -1,0 +1,32 @@
+/**
+@param $text-decoration:
+	*none: подчеркивание отменено полностью
+	always: Подчеркивание есть всегда
+	underline: Изначально подчеркнуто, при наведении подчеркивание убирается
+	hover: Изначально не подчеркнуто, при наведении подчеркивается
+@param $r-outline:
+	*false: outline не сброшено
+	true: outline сброшено
+@param $color:
+	*inherit: Цвет текста наследуется от родителя. Иначе указывайте цвет в любом доступном формате
+*/
+r-link($text-decoration = none, $r-outline = false, $color = inherit)
+	if ($text-decoration == always)
+		text-decoration underline
+		&:hover
+			text-decoration underline
+	if ($text-decoration == none)
+		text-decoration none
+		&:hover
+			text-decoration none
+	if ($text-decoration == underline)
+		text-decoration underline
+		&:hover
+			text-decoration none
+	if ($text-decoration == hover)
+		text-decoration none
+		&:hover
+			text-decoration underline
+	if $r-outline
+		r-outline()
+	color $color

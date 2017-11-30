@@ -1,0 +1,25 @@
+{
+  "name": "atomic-reset",
+  "version": "0.0.2",
+  "description": "Set mixins to reset the style and convenience of the layout",
+  "main": "index.styl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/login2030/atomic-reset.git"
+  },
+  "keywords": [
+    "stylus",
+    "css",
+    "reset",
+    "mixins"
+  ],
+  "author": "login2030",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/login2030/atomic-reset/issues"
+  },
+  "homepage": "https://github.com/login2030/atomic-reset#readme"
+}

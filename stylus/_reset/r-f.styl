@@ -1,0 +1,16 @@
+/**
+@param $r-bs:
+	*border-box: В размеры блока входят padding и border
+	content-box: В размеры блока не входят margin, padding и border
+	padding-box: В размеры блока входит только padding
+	inherit: Наследует значение родителя.
+@param $r-clearfix:
+	*false: псевдоэлементы не сбрасываются
+	true: псевдоэлементы  сбрасываются
+*/
+r-f($r-bs = border-box, $r-clearfix = false)
+	r-bs($r-bs)
+	r-offset()
+	if $r-clearfix
+		r-clearfix()
+	display flex
